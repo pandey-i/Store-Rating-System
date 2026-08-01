@@ -106,7 +106,7 @@ export default function Sidebar({
           {user?.role === "ADMIN" && (
             <>
               <NavLink
-                to="/admin"
+                to="/admin" end
                 className={linkClass}
                 onClick={handleNavClick}
               >
@@ -136,7 +136,7 @@ export default function Sidebar({
 
           {user?.role === "OWNER" && (
             <NavLink
-              to="/owner"
+              to="/owner" end
               className={linkClass}
               onClick={handleNavClick}
             >
@@ -147,7 +147,7 @@ export default function Sidebar({
 
           {user?.role === "USER" && (
             <NavLink
-              to="/stores"
+              to="/stores" end
               className={linkClass}
               onClick={handleNavClick}
             >
