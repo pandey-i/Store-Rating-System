@@ -10,12 +10,15 @@ export default function StoreForm({
   onSubmit,
   onCancel,
 }) {
-  const {
-    register,
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm();
+ const {
+  register,
+  handleSubmit,
+  control,
+  formState: { errors },
+} = useForm({
+  mode: "onBlur",
+  reValidateMode: "onChange",
+});
 
   const ownerOptions = owners.map((owner) => ({
   value: owner.id,
@@ -32,8 +35,16 @@ export default function StoreForm({
         placeholder="Enter store name"
         error={errors.name?.message}
         {...register("name", {
-          required: "Store name is required",
-        })}
+  required: "Store name is required",
+  minLength: {
+    value: 20,
+    message: "Store name must be at least 20 characters",
+  },
+  maxLength: {
+    value: 60,
+    message: "Store name cannot exceed 60 characters",
+  },
+})}
       />
 
       <Input
@@ -42,8 +53,12 @@ export default function StoreForm({
         placeholder="Enter store email"
         error={errors.email?.message}
         {...register("email", {
-          required: "Email is required",
-        })}
+  required: "Email is required",
+  pattern: {
+    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    message: "Enter a valid email address",
+  },
+})}
       />
 
       <div>
@@ -55,8 +70,12 @@ export default function StoreForm({
           rows={3}
           placeholder="Enter address"
           {...register("address", {
-            required: "Address is required",
-          })}
+  required: "Address is required",
+  maxLength: {
+    value: 400,
+    message: "Address cannot exceed 400 characters",
+  },
+})}
           className="w-full rounded-xl border border-slate-300 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
         />
 
