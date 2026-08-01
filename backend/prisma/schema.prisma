@@ -7,12 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Role {
-  ADMIN
-  USER
-  OWNER
-}
-
 model User {
   id        Int      @id @default(autoincrement())
   name      String   @db.VarChar(60)
@@ -20,12 +14,10 @@ model User {
   password  String
   address   String   @db.VarChar(400)
   role      Role     @default(USER)
-
-  stores    Store[]
-  ratings   Rating[]
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  ratings   Rating[]
+  stores    Store[]
 }
 
 model Store {
@@ -33,28 +25,31 @@ model Store {
   name      String   @db.VarChar(60)
   email     String   @unique @db.VarChar(255)
   address   String   @db.VarChar(400)
-
   ownerId   Int
-  owner     User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
-
-  ratings   Rating[]
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  ratings   Rating[]
+  owner     User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+
+  @@index([ownerId], map: "Store_ownerId_fkey")
 }
 
 model Rating {
   id        Int      @id @default(autoincrement())
   rating    Int
-
   userId    Int
   storeId   Int
-
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, storeId])
+  @@index([storeId], map: "Rating_storeId_fkey")
+}
+
+enum Role {
+  ADMIN
+  USER
+  OWNER
 }
