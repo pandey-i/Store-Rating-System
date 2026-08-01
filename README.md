@@ -17,7 +17,7 @@ Email: admin@example.com
 Password: Admin@123
 
 Store Owner
-Email: john.owner@example.com
+Email: rahul.owner@example.com
 Password: Owner@123
 
 User
