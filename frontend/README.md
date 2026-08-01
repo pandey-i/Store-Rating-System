@@ -24,11 +24,11 @@ A full-stack Store Rating System built with **React, Node.js, Express, Prisma, a
 
 | Users | Stores |
 |-------|--------|
-| ![](screenshots/users.png) | ![](screenshots/admin-stores.png) |
+| ![](screenshots/admin-users.png) | ![](screenshots/admin-stores.png) |
 
 | Owner Dashboard | User Dashboard |
 |-----------------|----------------|
-| ![](screenshots/owner-dashboard.png) | ![](screenshots/userpage.png) |
+| ![](screenshots/ownerdashboard.png) | ![](screenshots/userpage.png) |
 
 ---
 
