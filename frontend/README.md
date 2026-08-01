@@ -349,7 +349,7 @@ The application is fully responsive and optimized for:
 
 **Aman**
 
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: https://github.com/pandey-i
 
 ---
 
