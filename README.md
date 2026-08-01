@@ -10,6 +10,20 @@ A full-stack Store Rating System built with **React, Node.js, Express, Prisma, a
 ### Backend API
 🔗 https://store-rating-api-u1fv.onrender.com/
 
+Demo Credentials
+
+Admin
+Email: admin@example.com
+Password: Admin@123
+
+Store Owner
+Email: john.owner@example.com
+Password: Owner@123
+
+User
+Email: aman@example.com
+Password: User@123
+
 > **Note:** The backend is hosted on Render's free tier. The first request after a period of inactivity may take 30–60 seconds while the service wakes up.
 
 ---
