@@ -20,15 +20,15 @@ A full-stack Store Rating System built with **React, Node.js, Express, Prisma, a
 
 | Login | Admin Dashboard |
 |-------|-----------------|
-| ![](screenshots/login.png) | ![](screenshots/admin1.png) |
+| ![](frontend/screenshots/login.png) | ![](frontend/screenshots/admin1.png) |
 
 | Users | Stores |
 |-------|--------|
-| ![](screenshots/admin-users.png) | ![](screenshots/admin-stores.png) |
+| ![](frontend/screenshots/admin-users.png) | ![](frontend/screenshots/admin-stores.png) |
 
 | Owner Dashboard | User Dashboard |
 |-----------------|----------------|
-| ![](screenshots/ownerdashboard.png) | ![](screenshots/userpage.png) |
+| ![](frontend/screenshots/ownerdashboard.png) | ![](frontend/screenshots/userpage.png) |
 
 ---
 
